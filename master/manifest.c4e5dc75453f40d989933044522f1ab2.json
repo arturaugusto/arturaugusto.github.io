@@ -1,0 +1,44 @@
+{
+  "icons": [
+    {
+      "src": "https://arturaugusto.github.io/master/static/icons/icon_512x512.3c5483b4bcb425460fcaf7a7947238fb.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "https://arturaugusto.github.io/master/static/icons/icon_384x384.40aeddc16dfff1807f01b2fd08a90b1f.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "https://arturaugusto.github.io/master/static/icons/icon_256x256.605cc4e41d0096a165b945fd49c1e095.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://arturaugusto.github.io/master/static/icons/icon_192x192.1848b4f56b60a7278caf4f53d74ca23a.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://arturaugusto.github.io/master/static/icons/icon_128x128.8a1167debc7ef92c91a97a0ea0a1ae3d.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "https://arturaugusto.github.io/master/static/icons/icon_96x96.194df5b915f74a37da85389be782ee19.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Plataforma ProCal Teste",
+  "short_name": "ProCal Teste",
+  "orientation": "any",
+  "display": "standalone",
+  "start_url": "/master",
+  "description": "Plataforma para apoio metrol\u00f3gico",
+  "background_color": "#324157",
+  "theme_color": "#324157",
+  "theme-color": "#324157",
+  "cors": "no-cors"
+}
