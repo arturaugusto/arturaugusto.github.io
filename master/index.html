@@ -1394,8 +1394,17 @@
   </div>
   <div id="pdf-container"></div>
 
-  <script type=text/javascript src=https://arturaugusto.github.io/master/static/js/manifest.49b9fc2e523cd0cbd10f91632e74becf.js></script>
   <script type="text/javascript" src="https://arturaugusto.github.io/master/static/js/app.ea06c2e05d90f7ec6f20d5d5e22ae234.js"></script>
+  <script type=text/javascript>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+  .then(function(registration) {
+    console.log('Registration successful, scope is:', registration.scope);
+  })
+  .catch(function(error) {
+    console.log('Service worker registration failed, error:', error);
+  });
+}</script>
 
   
 
