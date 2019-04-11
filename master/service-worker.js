@@ -156,7 +156,7 @@ self.addEventListener("install", function(e) {
   if ("GET" === e.request.method) {
     var t, a = stripIgnoredUrlParameters(e.request.url, ignoreUrlParametersMatching);
     (t = urlsToCacheKeys.has(a)) || (a = addDirectoryIndex(a, "index.html"), t = urlsToCacheKeys.has(a));
-    !t && "navigate" === e.request.mode && isPathWhitelisted([], e.request.url) && (a = new URL("https://{{site_name}}/index.html", self.location).toString(), t = urlsToCacheKeys.has(a)), t && e.respondWith(caches.open(cacheName).then(function(e) {
+    !t && "navigate" === e.request.mode && isPathWhitelisted([], e.request.url) && (a = new URL("https://https://arturaugusto.github.io/master/index.html", self.location).toString(), t = urlsToCacheKeys.has(a)), t && e.respondWith(caches.open(cacheName).then(function(e) {
       return e.match(urlsToCacheKeys.get(a)).then(function(e) {
         if (e) return e;
         throw Error("The cached response that was expected is missing.")
