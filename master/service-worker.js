@@ -62,7 +62,7 @@ var precacheConfig = [
   ],
   [
     "https://arturaugusto.github.io/master/index.html",
-    "8f6b798e31de555359977d90115a98fa"
+    "d11746dfb0574a2c4ceceeaa9520d68c"
   ]
 ],
   cacheName = "sw-precache-v3-ipt-procal-" + (self.registration ? self.registration.scope : ""),
