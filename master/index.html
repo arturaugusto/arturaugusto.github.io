@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 
-  <link href="https://arturaugusto.github.io/master/static/css/app.fd8d0ef65eeeec17008a330835d3efa1.css" rel="stylesheet" type="text/css">
+  <link href="https://arturaugusto.github.io/master/static/css/app.5fb8bde38c49e29ee51892bef5106445.css" rel="stylesheet" type="text/css">
 
 
 
@@ -62,7 +62,7 @@
                   <p class="has-text-grey" style="padding-top: 12px;">
                     <span v-if="action !== 'recuperar'"><a @click="action='recuperar'">Recuperar Senha</a> &nbsp;</span>
                     <br>
-                    <a @click="">Termos de Uso</a> &nbsp;
+                    <a @click="instrumentState.modals.termosDeUso = true">Termos de Uso</a> &nbsp;
                   </p>
                 </form>
 
@@ -86,7 +86,7 @@
                   <p class="has-text-grey" style="padding-top: 12px;">
                     <span v-if="action !== 'login'"><a @click="action='login'">Login</a></span>
                     <br>
-                    <a @click="">Termos de Uso</a> &nbsp;
+                    <a @click="instrumentState.modals.termosDeUso = true">Termos de Uso</a> &nbsp;
                   </p>
                 </form>
 
@@ -104,6 +104,9 @@
                       <input v-model="passwordComfirm" class="input" type="password" placeholder="confirmar senha">
                     </div>
                   </div>
+                  <p v-if="password !== passwordComfirm" class="help is-danger">Os dois campos devem ser iguais</p>
+                  <p v-if="password.length && password.length < 6" class="help is-danger">A senha deve ter no mínimo 6 caracteres</p>
+
                   <!--
                   <div class="field">
                     <label class="checkbox">
@@ -117,7 +120,7 @@
                     <span><a @click="action='login'">Login</a></span>
                     <span><a @click="action='recuperar'">Recuperar Senha</a> &nbsp;</span>
                     <br>
-                    <a @click="">Termos de Uso</a> &nbsp;
+                    <a @click="instrumentState.modals.termosDeUso = true">Termos de Uso</a> &nbsp;
                   </p>
                 </form>
 
@@ -126,6 +129,181 @@
           </div>
         </div>
       </section>
+
+
+
+      <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.termosDeUso ? 'is-active' : ''">
+        <div class="modal-background"></div>
+        <div class="modal-content" style="width: 80%;">
+          <div class="box">
+
+            <article class="media">
+              
+              <div class="media-content">
+
+                <h6 class="title is-6">Termos de Uso da Plataforma IPT ProCal</h6>
+
+<div class="help-modal-content"><div><div class="WordSection1"><p class="MsoNormal">A plataforma IPT Procal foi desenvolvida pelo Laboratório
+de Metrologia Elétrica do Instituto de Pesquisas Tecnológicas do Estado de São
+Paulo S.A. - IPT (LME-IPT)para permitir que os seus clientes possam acessar os
+dados das calibrações contratadas de forma mais ágil, flexível e com recursos
+analíticos.</p> <p class="MsoNormal">O domínio procal.ipt.br e todas as páginas, telas, módulos,
+figuras, imagens e funcionalidades relacionados à plataforma IPT Procal,
+incluindo, mas não se limitando, à página procal.ipt.br (www.ipt.br), tudo em
+conjunto denominado simplesmente “PLATAFORMA” neste documento, pertence ao
+Laboratório de Metrologia Elétrica do Instituto de Pesquisas Tecnológicas do
+Estado de São Paulo S.A. (“IPT”).</p> <p class="MsoNormal">Os dados trafegados para dentro e fora do site, tais como
+senhas e os dados dos instrumentos são criptografados. O site também utiliza
+cookies para permitir uma melhor experiência e funcionalidade.</p> <p class="MsoNormal">1.            Aceitação aos Termos de Uso</p> <p class="MsoNormal">1.1          Ao acessar ou visitar, de qualquer forma, a
+Plataforma, os clientes, visitantes ou quaisquer usuários, sejam pessoas
+físicas ou jurídicas (denominados simplesmente “CLIENTES”) deverão estar de
+acordo com estes Termos de Uso da Plataforma (“TERMOS DE USO”) e obedecer todas
+as regras aqui constantes. Portanto, se não houver concordância com este
+documento parcial ou integralmente, a PLATAFORMA ou quaisquer de seus conteúdos
+e/ou serviços não devem ser acessados.</p> <p class="MsoNormal">1.2          O IPT reserva o direito de alterar ou modificar
+estes TERMOS DE USO ao seu exclusivo critério, a qualquer momento. Qualquer
+alteração ou modificação a estes entrará em vigor imediatamente após a
+publicação na PLATAFORMA e/ou no website. O CLIENTE é responsável por analisar
+periodicamente a mais atualizada versão destes TERMOS DE USO.</p> <p class="MsoNormal">1.3          O uso da PLATAFORMA constitui a aceitação de
+quaisquer alterações ou modificações feitas nos TERMOS DE USO.</p> <p class="MsoNormal">2.            Clientes e Usuários</p> <p class="MsoNormal">2.1          O uso da PLATAFORMA está disponível apenas para
+os clientes do Laboratório de Metrologia Elétrica do IPT.</p> <p class="MsoNormal">2.2          Mediante um cadastro de login e senha, o
+CLIENTE pode ter acesso aos dados de instrumentos calibrados no Laboratório de
+Metrologia Elétrica do IPT.</p> <p class="MsoNormal">2.3          A responsabilidade pela segurança, conservação
+confidencialidade da senha e sigilo das informações é do CLIENTE. Os usuários
+da PLATAFORMA devem ter vínculo com a empresa do cliente contratante do
+serviço, se pessoa jurídica, ou ser o próprio cliente, se pessoa física.</p> <p class="MsoNormal">2.4          É expressamente proibida a divulgação da senha
+para usuários sem vínculo com o CLIENTE do IPT.</p> <p class="MsoNormal">2.5          O IPT não se responsabiliza por qualquer perda
+de senha ou por vazamento de senha para terceiros ou por quaisquer prejuízos ou
+danos decorrentes da perda de senha.</p> <p class="MsoNormal">3.            Uso dos Serviços</p> <p class="MsoNormal">3.1          O acesso à PLATAFORMA e/ou a utilização dos
+serviços poderá se dar por meio de computadores e dispositivos móveis,
+incluindo smartphones, tablets ou qualquer outro dispositivo relacionado ou
+assemelhado, seja por meio de aplicações/aplicativos específicos ou não.
+Entretanto, o IPT não se responsabiliza por eventual incompatibilidade ou falha
+ou limitação de recursos, decorrente da versão do navegador ou do sistema
+operacional do dispositivo. </p> <p class="MsoNormal">3.2          O CLIENTE não poderá permitir que terceiros
+acessem a PLATAFORMA, sob pena de bloqueio do acesso e multa por quebra de
+confidencialidade. Em caso de perda de dados, violação de segurança ou uso não
+autorizado de sua conta, você deverá notificar o IPT imediatamente, por meio
+dos canais de comunicação indicados na PLATAFORMA ou pelo e-mail  Lme@ipt.br.</p> <p class="MsoNormal">3.3          Entende-se por “terceiros”, usuários sem
+vínculo formal de trabalho com o CLIENTE contratante do serviço.</p> <p class="MsoNormal">3.4          O servidor utilizado pelo IPT poderá sofrer
+interrupções por diversos motivos, tais como manutenção, defeito, queda de
+energia por tempo prolongado, entre outros. O IPT não se compromete a manter o
+acesso à PLATAFORMA durante 24 horas por dia, em 7 dias na semana. O IPT também
+não poderá ser responsabilizado por quaisquer prejuízos decorrentes de falha no
+acesso.</p> <p class="MsoNormal">3.5          O IPT não se responsabiliza por perdas ou danos
+de dados contidos na PLATAFORMA ou de quaisquer de seus serviços. O uso dos
+serviços poderá ser interrompido a qualquer momento por decisão única e
+exclusiva do IPT, sem aviso prévio ou comunicado oficial.</p> <p class="MsoNormal">4.            Uso do conteúdo da Plataforma</p> <p class="MsoNormal">4.1          Para os fins destes TERMOS DE USO, “CONTEÚDO”
+inclui, mas não se limita a dados, imagens, textos, gráficos, fotos, equações,
+combinações audiovisuais, recursos interativos, comentários, propagandas,
+anúncios publicitários, software e aplicativos, dentre outros materiais que
+você poderá, por meio da PLATAFORMA, ter acesso e/ou utilizar.</p> <p class="MsoNormal">4.2          O IPT possui os direitos autorais e a
+exclusividade na propriedade intelectual da PLATAFORMA, do seu CONTEÚDO e de
+todas as funcionalidades e recursos disponíveis.</p> <p class="MsoNormal">4.3          O CONTEÚDO acessado não poderá ser
+compartilhado, transmitido, divulgado em qualquer tipo de mídia, nem ser
+fornecido a terceiros e utilizado para outros fins não relacionados ao serviço
+contratado. </p> <p class="MsoNormal">4.4          A PLATAFORMA dispõe de determinadas
+funcionalidades que permitem com que os usuários enviem ou publiquem textos
+e/ou outros conteúdos. Neste sentido, o CLIENTE aceita, reconhece e se
+compromete a:</p> <p class="MsoNormal">(a) não compartilhar, transmitir, enviar, disponibilizar,
+exibir ou publicar na PLATAFORMA qualquer conteúdo que consista em propriedade
+intelectual de terceiros ou que esteja protegido por direitos autorais, por
+segredo de negócio ou por qualquer outra forma de proteção de direitos de
+titularidade de terceiros;</p> <p class="MsoNormal">(b) não compartilhar, transmitir, enviar, disponibilizar,
+exibir ou publicar na PLATAFORMA qualquer conteúdo impróprio;</p> <p class="MsoNormal">(c) não realizar o download de qualquer conteúdo, a menos
+que tal opção esteja expressamente liberada na PLATAFORMA;</p> <p class="MsoNormal">(d) não reproduzir, distribuir, transmitir, exibir, vender,
+licenciar ou explorar comercialmente qualquer conteúdo;</p> <p class="MsoNormal">(e) não fraudar, desativar ou de qualquer forma interferir
+em características relacionadas à segurança da PLATAFORMA e do seu CONTEÚDO.</p> <p class="MsoNormal">5.            Obrigações e deveres do Cliente</p> <p class="MsoNormal">5.1          O CLIENTE assume toda e qualquer
+responsabilidade pela veracidade do conteúdo adicionado à PLATAFORMA, ficando
+responsável ainda por quaisquer erros cometidos e suas consequências.</p> <p class="MsoNormal">5.2          Todo e qualquer conteúdo, incluindo as marcas e
+os nomes de domínios, que sejam disponibilizados diretamente pelo IPT na
+PLATAFORMA pertencem exclusivamente ao IPT sob reserva de direitos autorais e
+outros direitos de propriedade intelectual nos termos da lei. Esses conteúdos
+próprios do IPT não se confundem com o conteúdo do certificado e dos dados da
+calibração, que são de propriedade do CLIENTE.</p> <p class="MsoNormal">5.3          O CLIENTE  admite e concorda que a entrega do
+serviço contratado não está vinculada ao acesso à PLATAFORMA. Embora a PLATAFORMA
+conte com a opção de download de documentos, a entrega oficial do certificado
+de calibração se dará somente via e-mail corporativo (quando emitido em formato
+eletrônico) ou em formulário oficial com timbre e assinaturas (em meio físico).
+Documentos baixados da PLATAFORMA não possuem  assinatura e validade legal.</p> <p class="MsoNormal">5.4          O CLIENTE não poderá reproduzir, modificar,
+realizar engenharia reversa, compilar, descompilar, transmitir, publicar,
+sublicenciar, permitir, autorizar, alugar, vender, distribuir, ou, de qualquer
+outra forma, utilizar qualquer conteúdo, funcionalidade, software ou material
+da PLATAFORMA de forma não permitida nesses TERMOS DE USO, sem prévia e
+expressa autorização, por escrito, do IPT.</p> <p class="MsoNormal">5.5          O CLIENTE se compromete e garante que não
+registrará nem tentará registrar nomes de domínio na internet, perante
+quaisquer entidades, nacionais ou estrangeiras, contendo marcas, nomes e/ou
+elementos pertencentes ao IPT, ou relacionados a esta PLATAFORMA ou a seus
+produtos e serviços.</p> <p class="MsoNormal">5.6          O CLIENTE se compromete a:</p> <p class="MsoNormal">(a) não reivindicar ou buscar obter registro ou proteção de
+quaisquer direitos de propriedade intelectual ou direitos autorais sobre os
+conteúdos pertencentes ao IPT;</p> <p class="MsoNormal">(b) não utilizar qualquer sistema automatizado (incluindo
+"robôs", "spiders" ou "offline readers") que
+permita o acesso à PLATAFORMA de forma automática e com quantidade e velocidade
+superiores ao que seria possível de fosse feito por pessoas naturais;</p> <p class="MsoNormal">(c) não tentar coletar e/ou extrair dados ou qualquer
+informação de outros clientes;</p> <p class="MsoNormal">(d) cumprir com todas as leis, normas e regulamentos
+aplicáveis, no Brasil ou no exterior.</p> <p class="MsoNormal">6.            Utilização da Marca IPT </p> <p class="MsoNormal">6.1          O uso e acesso a PLATAFORMA não dão ao cliente
+o direito de utilização da marca IPT, em nenhuma mídia, impressa ou eletrônica,
+gratuita ou onerosa, tais como: peças promocionais/publicitárias; banners;
+informativos; catálogos, embalagens ou rótulos de produtos; sites; revistas,
+jornais; cartazes de feiras e eventos em geral.</p> <p class="MsoNormal">6.2          Não é permitido ao CLIENTE relacionar o nome do
+IPT como seu parceiro, certificador de qualidade ou tecer nenhuma outra menção
+ou consideração que induza o terceiros  a crer que o IPT aprova tecnicamente o
+instrumento ou a regra de decisão ou o critério para análise dos dados.</p> <p class="MsoNormal">6.3          A utilização indevida da marca IPT sujeitará o
+CLIENTE à aplicação de multa de 100% do valor estabelecido no respectivo
+orçamento ou proposta de trabalho, sem prejuízo das sanções civis e penais
+aplicáveis.</p> <p class="MsoNormal">7.            Utilização comercial da Plataforma</p> <p class="MsoNormal">7.1          O uso comercial da PLATAFORMA é prerrogativa
+única e exclusiva do IPT.</p> <p class="MsoNormal">7.2          O CLIENTE não poderá  explorar ou utilizar
+comercialmente, por qualquer meio, qualquer parte dos serviços ou dos conteúdos
+da PLATAFORMA. Para os fins do presente, exploração ou utilização com
+finalidade comercial inclui, mas não se limita a (i) venda ou disponibilização,
+mediante recebimento de retribuição ou benefício, de acesso a esses serviços
+e/ou conteúdos, (ii) a venda ou comercialização de publicidade, patrocínios ou
+promoções associados a esses serviços ou conteúdos.</p> <p class="MsoNormal">7.3          O CLIENTE não poderá reproduzir ou copiar o
+CONTEÚDO da PLATAFORMA com finalidade comercial de qualquer espécie e/ou de
+forma que se caracterize concorrência desleal contra o IPT.</p> <p class="MsoNormal">8.            Responsabilidades do IPT e do Cliente</p> <p class="MsoNormal">8.1          O IPT empregará seus maiores esforços para
+assegurar que todas as informações e dados oferecidos na PLATAFORMA sejam tão
+atualizados, precisos e completos quanto possível. Entretanto, em nenhuma
+circunstância, o IPT poderá ser responsabilizado quanto à integridade,
+atualidade e exatidão de tais informações e dados, não sendo responsável,
+perante o CLIENTE ou qualquer terceiro, por quaisquer danos indiretos,
+consequentes, exemplares, incidentais, especiais ou punitivos, inclusive, sem
+limitação, por lucros cessantes, resultantes do uso da PLATAFORMA ou dos
+serviços nela oferecidos.</p> <p class="MsoNormal">8.2          O CLIENTE concorda em defender, indenizar e
+isentar o IPT, seus diretores, funcionários e representantes, de toda e
+qualquer demanda judicial, danos, obrigações ou perdas (incluindo, sem
+limitação, honorários advocatícios) decorrentes:</p> <p class="MsoNormal">(a) da violação de qualquer disposição destes TERMOS DE USO
+ou</p> <p class="MsoNormal">(b) da violação por qualquer direito de terceiros.</p> <p class="MsoNormal">8.3          O IPT não garante que o acesso ao site seja
+livre de erros ou problemas, decorrentes de casos fortuitos, internos ou
+externos, casos de força maior ou por outros casos não sujeitos a controle do
+IPT. Desta forma, o IPT não assume qualquer obrigação ou responsabilidade por
+quaisquer:</p> <p class="MsoNormal">(a) danos pessoais ou materiais, de qualquer natureza, que
+resulte do seu acesso e do uso da PLATAFORMA;</p> <p class="MsoNormal">(b) qualquer acesso ou uso dos servidores protegidos do IPT
+e/ou de qualquer informação ou dado ali armazenado;</p> <p class="MsoNormal">(c) qualquer interrupção de acesso à PLATAFORMA;</p> <p class="MsoNormal">(d) qualquer vírus ou dispositivo malicioso (e congêneres)
+que possa atacar o equipamento do CLIENTE em decorrência do acesso, utilização
+ou navegação na PLATAFORMA ou como consequência do download, utilização ou
+acesso a qualquer conteúdo da Plataforma.</p> <p class="MsoNormal">9.            Contratação de Serviços na Plataforma</p> <p class="MsoNormal">9.1          A contratação de qualquer serviço na PLATAFORMA
+ou relacionado à PLATAFORMA será regida por um contrato que deve ser aceito e
+aprovado pelo CLIENTE, após recebimento e análise de um orçamento ou proposta
+do IPT. Esse contrato é a base jurídica para o fornecimento de serviços pelo
+IPT e possuem termos e condições adicionais que se aplicam a cada tipo de
+solução oferecida. Portanto, não haverá nenhuma cobrança do IPT sem a anuência
+e aprovação do CLIENTE.</p> <p class="MsoNormal">9.2          Estes TERMOS DE USO serão regidos,
+exclusivamente, pelas leis brasileiras e suas controvérsias deverão ser
+solucionadas entre o CLIENTE e o IPT, sendo também o foro da Comarca da Capital
+de São Paulo o competente para dirimir qualquer questão relativa a ele.</p> <p class="MsoNormal">10.          Prazo e vigência dos Termos de Uso</p> <p class="MsoNormal">10.1       Estes TERMOS DE USO permanecerão em plena força e
+vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nbsp;</p></div></div></div>
+
+
+              </div>
+            </article>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="instrumentState.modals.termosDeUso = false"></button>
+      </div>
+
+
+
+
     </div>
   </div>
 
@@ -165,7 +343,7 @@
         </div>
 
         <div class="level-right">
-          <div class="tabs is-centered" style="margin-top: 6px;">
+          <div class="tabs is-centered filtro-instrumentos-tabs" style="margin-top: 6px;">
             <ul>
               <li v-bind:class="{'is-active': filtroSituacao==='TODOS'}">
                 <a @click="filtroSituacao='TODOS'">Todos</a>
@@ -201,7 +379,7 @@
               <span>Nenhum instrumento encontrado</span>
             </p>
             <article class="media" v-for="inst in instrumentosFiltro">
-              <router-link :to="{ path: 'instrumento/'+inst.id+'/analise'}" class="has-text-black">
+              <router-link :to="{ path: 'instrumento/'+inst.id+'/certificado'}" class="has-text-black">
 
                 <div class="media-content">
                   
@@ -355,7 +533,7 @@
                 
               </div>
 
-              <span class="icon has-text-info"> <i class="fas fa-question-circle"></i></span>
+              <span class="icon has-text-info abre-ajuda" @click="instrumentState.modals.helpFaixa = true"> <i class="fas fa-question-circle"></i></span>
               
             </div>
             <div class="message-body" style="padding: 0px !important">
@@ -400,7 +578,7 @@
 
 
 
-              <span class="icon has-text-info"> <i class="fas fa-question-circle"></i> </span>
+              <span class="icon has-text-info abre-ajuda" @click="instrumentState.modals.helpTendencia = true"> <i class="fas fa-question-circle"></i> </span>
 
 
 
@@ -421,11 +599,11 @@
             <article class="message is-white" style="border: 0px;box-shadow: none;">
               <div class="message-header">
                 <p class="has-text-info">Regra de Decisão</p>
-                <span class="icon has-text-info"> <i class="fas fa-question-circle"></i></span>
+                <span class="icon has-text-info abre-ajuda" @click="instrumentState.modals.helpRegra = true"> <i class="fas fa-question-circle"></i></span>
               </div>
-              <div class="message-body">
+              <div class="message-body" style="padding-top: 4px !important;">
 
-                <div class="notification">
+                <div class="notification" style="padding: 6px;">
                   <p>Resultado <span class="tag is-success">Conforme</span> se <span style="font-size: 0.8em;font-weight: bold;">(|Erro| + U) × Fator ≤ EMA</span></p>
                   <p>Resultado <span class="tag is-danger">Não Conforme</span> se <span style="font-size: 0.8em;font-weight: bold;">(|Erro| + U) × Fator > EMA</span></p>
                 </div>
@@ -465,13 +643,13 @@
                   </div>
                 </div>
 
-                <div class="notification" v-if="analiseFaixa.lhs === 'tol'">
+                <div class="notification" v-if="analiseFaixa.lhs === 'tol'" style="padding: 6px;">
                   <label class="label">Tolerância</label>
                   <div class="field has-addons has-addons-centered">
                     <p class="control">
-                      <input class="input" min="0" type="number" placeholder="" v-model="analiseFaixa.tolVal">
+                      <input class="input is-size-7" min="0" type="number" placeholder="" v-model="analiseFaixa.tolVal">
                     </p>
-                    <p class="control">
+                    <p class="control is-size-7">
                       <span class="select">
                         <select v-model="analiseFaixa.tolUnidade">
                           <option>%</option>
@@ -480,20 +658,20 @@
                       </span>
                     </p>
                     <p class="control">
-                      <a class="button is-static">+</a>
+                      <a class="button is-static is-size-7">+</a>
                     </p>
                     <p class="control">
-                      <input class="input" min="0" type="number" placeholder="" v-model="analiseFaixa.tolValNaUnidade">
+                      <input class="input is-size-7" min="0" type="number" placeholder="" v-model="analiseFaixa.tolValNaUnidade">
                     </p>
                     <p class="control" v-if="prefixoUnidade !== ''">
-                      <a class="button is-static">{{prefixoUnidade}}</a>
+                      <a class="button is-static is-size-7">{{prefixoUnidade}}</a>
                     </p>
                   </div>
                 </div>
 
-                <div class="field">
+                <div class="field" v-if="instrumentState.usuarioTemAdminRole">
                   <p class="control">
-                    <a class="button is-small is-link" @click="eventoSelecionado === 'Agora' ? confirmaGravaConfFormVisivel = true : ''" :disabled="eventoSelecionado !== 'Agora'">
+                    <a class="button is-small is-link" @click="eventoSelecionado === 'Agora' ? instrumentState.modals.confirmaGravaConfFormVisivel = true : ''" :disabled="eventoSelecionado !== 'Agora'">
                       <!-- <span class="icon is-medium is-left">
                         <i class="fas fa-plus"></i>
                       </span> -->
@@ -502,7 +680,7 @@
                   </p>
                 </div>
 
-                <div class="modal modal-fx-fadeInScale" v-bind:class="confirmaGravaConfFormVisivel ? 'is-active' : ''">
+                <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.confirmaGravaConfFormVisivel ? 'is-active' : ''">
                   <div class="modal-background"></div>
                   <div class="modal-content is-right">
                     <div class="box">
@@ -527,7 +705,7 @@
 
                       
                       <div class="">
-                        <a class="button is-light" @click="novaConfObservacao = '';confirmaGravaConfFormVisivel = false">
+                        <a class="button is-light" @click="novaConfObservacao = '';instrumentState.modals.confirmaGravaConfFormVisivel = false">
                           Cancelar
                         </a>
                         <a class="button is-link" @click="gravaConfHandler">
@@ -538,7 +716,7 @@
 
                     </div>
                   </div>
-                  <button class="modal-close is-large" aria-label="close" @click="novaConfObservacao = '';confirmaGravaConfFormVisivel = false"></button>
+                  <button class="modal-close is-large" aria-label="close" @click="novaConfObservacao = '';instrumentState.modals.confirmaGravaConfFormVisivel = false"></button>
                 </div>
 
               </div>
@@ -549,7 +727,7 @@
             <article class="message is-white" style="border: 0px;box-shadow: none;margin-bottom: 0px;">
               <div class="message-header">
                 <p class="has-text-info">Formulas e Aplicação</p>
-                <span class="icon has-text-info"> <i class="fas fa-question-circle"></i></span>
+                <span class="icon has-text-info abre-ajuda" @click="instrumentState.modals.helpFormulas = true"> <i class="fas fa-question-circle"></i></span>
               </div>
               <div class="message-body">
 
@@ -661,7 +839,7 @@
 
               </div>
             </article>
-            <pre v-if="analiseNotas">{{analiseNotas}}</pre>
+            <pre v-if="analiseNotas" v-html="analiseNotas"></pre>
             
           </div>
         </div>
@@ -675,7 +853,7 @@
             <article class="message is-white" style="border: 0px;box-shadow: none;">
               <div class="message-header">
                 <p class="has-text-info">Dados e Resultados</p>
-                <span class="icon has-text-info"> <i class="fas fa-question-circle"></i></span>
+                <span class="icon has-text-info abre-ajuda" @click="instrumentState.modals.helpDados = true"> <i class="fas fa-question-circle"></i></span>
               </div>
               <div class="message-body">
 
@@ -726,27 +904,20 @@
     <div>
 
       
-      <div v-if="pdfObjList && !pdfObjList.length" class="notification is-info is-right">
+      <p style="margin-top: 12px;" v-if="pdfObjList && !pdfObjList.length" class="notification is-info is-right">
 
         <span class="icon">
           <i class="fas fa-info-circle"></i>
         </span> Nenhum certificado disponível
-      </div>
+      </p>
 
-      <div
-        title="Certificado disponível apenas online"
-        type="info"
-        :closable="false"
-        center
-        show-icon
-      >
-      </div>
-      <div v-if="erro === 'unauthorized' || !remoteDB">
+      <div v-if="erro === 'unauthorized' || !remoteDB || !instrumentState.online">
         <div class="" style="margin-top: 12px;">
           <span class="icon has-text-warning">
             <i class="fas fa-exclamation-triangle"></i>
           </span>
-          <span class="title is-6">Sua sessão expirou. É necessário realizar o login novamente para visualizar os certificados.</span>
+          <span v-if="!instrumentState.online" class="title is-6">Certificado disponível apenas online.</span>
+          <span v-if="instrumentState.online" class="title is-6">Sua sessão expirou. É necessário realizar o login novamente para visualizar os certificados.</span>
         </div>
         <!--<el-button
           @click="setLoggedOut()"
@@ -785,25 +956,38 @@
   <div id="__template_AppNav" class="__router_template">
     <nav class="navbar is-link" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="#">
+        <a class="navbar-item" href="#" style="pointer-events: none;">
           <img style="max-height: 4rem;" src="data:image/png;base64,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" border="0" class="logo-header" tabindex="0"/>
         </a>
+        <div 
+          class="navbar-item"
+          style="" 
+          v-if="!emInstrumento && !instrumentState.isLanding">
+          LISTA DE INSTRUMENTOS
+        </div>
 
-        <a role="button" class="navbar-burger burger" v-bind:class="burgerActive ? 'is-active': ''" @click="burgerActive = !burgerActive" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <a v-if="!instrumentState.isLanding" role="button" class="navbar-burger burger" v-bind:class="burgerActive ? 'is-active': ''" @click="burgerActive = !burgerActive" aria-label="menu" aria-expanded="false" data-target="navbar">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
+
       </div>
-      <div id="navbar" class="navbar-menu" v-bind:class="burgerActive ? 'is-active': ''">
+
+
+      <div id="navbar" class="navbar-menu" v-bind:class="burgerActive || instrumentState.isLanding ? 'is-active': ''">
         <div class="navbar-end" @click="burgerActive = false" style="font-size: 0.9em">
 
-          <div 
-            class="navbar-item"
-            style="" 
-            v-if="!emInstrumento && !instrumentState.isLanding">
-            LISTA DE INSTRUMENTOS
+          <div class="navbar-item" v-if="instrumentState.isLanding">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-success is-fullwidth" @click="instrumentState.isLanding = false">
+                  Acessar
+                </a>
+              </div>
+            </div>
           </div>
+
 
           <router-link
             v-if="emInstrumento && !instrumentState.isLanding"
@@ -834,33 +1018,34 @@
               ANÁLISE
             </span>
           </router-link>
-
-          <div v-if="emInstrumento && !instrumentState.isLanding" class="navbar-item has-dropdown is-hoverable">
+  
+          <div v-if="instrumentState.db && !instrumentState.isLanding" class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" style="">
               Outros
             </a>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item" @click="configDialog = true">
+ 
+            <div class="navbar-dropdown" v-bind:class="!emInstrumento ? 'is-right' : ''">
+              <a v-if="emInstrumento && instrumentState.usuarioTemAdminRole" class="navbar-item" @click="instrumentState.modals.configDialog = true">
                 <span class="">
                   <span class="icon"><i class="fas fa-cog"></i></span>
                   Periodicidade
                 </span>
               </a>
-              <a class="navbar-item" @click="ocorrenciasActive = true">
+              <a v-if="emInstrumento" class="navbar-item" @click="instrumentState.modals.ocorrenciasActive = true">
                 <span class="">
                   <span class="icon"><i class="fas fa-calendar-alt"></i></span>
                   Ocorrências
                 </span>
               </a>
-              <a class="navbar-item" @click="gerenciandoUsuarios = true">
+
+              <a v-if="instrumentState.db && instrumentState.usuarioTemAdminRole" class="navbar-item" @click="instrumentState.modals.gerenciandoUsuarios = true">
                 <span class="">
                   <span class="icon"><i class="fas fa-users"></i></span>
                   Usuários
                 </span>
               </a>
-              <hr class="navbar-divider">
-              <a class="navbar-item" @click="setLoggedOut">
+              <hr v-if="instrumentState.usuarioTemAdminRole || emInstrumento" class="navbar-divider">
+              <a v-if="instrumentState.db" class="navbar-item" @click="setLoggedOut">
                 <span class="">
                   <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
                   Sair
@@ -869,9 +1054,9 @@
             </div>
           </div>
 
-          <div class="navbar-item">
+          <div v-if="instrumentoStatus" class="navbar-item">
             <div class="buttons">
-              <a v-if="instrumentoStatus" class="button" @click="solicitarActive = true" v-bind:class="instrumentoStatus.cor">
+              <a class="button" @click="instrumentState.modals.solicitarActive = true" v-bind:class="instrumentoStatus.cor">
 
                 <span v-if="instrumentoStatus.situacao === 'CALIBRADO'" class="icon">
                   <i class="fas fa-check-circle"></i>
@@ -881,9 +1066,6 @@
                   <i class="fas fa-exclamation-triangle"></i>
                 </span>
 
-              </a>
-              <a class="button is-success" @click="instrumentState.isLanding = false" v-if="instrumentState.isLanding">
-                Acessar
               </a>
             </div>
           </div>
@@ -897,14 +1079,14 @@
         Nav modals
       ------------------------------------------------------------------>
 
-      <div class="modal modal-fx-fadeInScale" v-if="instrumentoStatus" v-bind:class="ocorrenciasActive ? 'is-active' : ''">
+      <div class="modal modal-fx-fadeInScale" v-if="instrumentoStatus" v-bind:class="instrumentState.modals.ocorrenciasActive ? 'is-active' : ''">
         <div class="modal-background"></div>
         <div class="modal-content">
           <div class="box" style="font-size: 0.9em;">
 
             <h6 class="title is-6">Ocorrências</h6>
 
-            <div class="field">
+            <div class="field" v-if="instrumentState.usuarioTemAdminRole">
               <div class="control">
                 <a class="button is-small" @click="novaOcorrenciaFormVisivel = true">
                 <span class="icon is-medium is-left">
@@ -989,12 +1171,12 @@
 
           </div>
         </div>
-        <button class="modal-close is-large" aria-label="close" @click="ocorrenciasActive = false"></button>
+        <button class="modal-close is-large" aria-label="close" @click="instrumentState.modals.ocorrenciasActive = false"></button>
       </div>
 
 
 
-      <div class="modal modal-fx-fadeInScale" v-if="instrumentoStatus" v-bind:class="solicitarActive ? 'is-active' : ''">
+      <div class="modal modal-fx-fadeInScale" v-if="instrumentoStatus" v-bind:class="instrumentState.modals.solicitarActive ? 'is-active' : ''">
         <div class="modal-background"></div>
         <div class="modal-content">
           <div class="box">
@@ -1030,47 +1212,49 @@
             </article>
           </div>
         </div>
-        <button class="modal-close is-large" aria-label="close" @click="solicitarActive = false"></button>
+        <button class="modal-close is-large" aria-label="close" @click="instrumentState.modals.solicitarActive = false"></button>
       </div>
 
-      <div class="modal modal-fx-fadeInScale" v-bind:class="gerenciandoUsuarios ? 'is-active' : ''">
+      <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.gerenciandoUsuarios ? 'is-active' : ''">
         <div class="modal-background"></div>
         <div class="modal-content" :class="processandoAcaoUsuarios ? 'is-loading' : ''">
           <div class="box">
 
-            <div v-if="!gerenciandoUsuariosLogged">
-              <h6>Confirme suas credenciais para continuar</h6>
-              <div class="field">
-                <p class="control has-icons-left has-icons-right">
-                  <input class="input" type="email" placeholder="Usuário" v-model="usersForm.username">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-user"></i>
-                  </span>
-                </p>
+            <form>
+              <div v-if="!gerenciandoUsuariosLogged">
+                <h6>Confirme suas credenciais para continuar</h6>
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" placeholder="Usuário" v-model="usersForm.username">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </p>
+                </div>
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input class="input" type="password" placeholder="Senha" v-model="usersForm.password">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </p>
+                </div>
+                <div class="field">
+                  <p class="control">
+                    <button class="button is-info is-small" @click="iniciaGestaoUsuarios" :class="processandoAcaoUsuarios ? 'is-loading' : ''">
+                      Continuar
+                    </button>
+                  </p>
+                </div>
+                
               </div>
-              <div class="field">
-                <p class="control has-icons-left">
-                  <input class="input" type="password" placeholder="Senha" v-model="usersForm.password">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-lock"></i>
-                  </span>
-                </p>
-              </div>
-              <div class="field">
-                <p class="control">
-                  <button class="button is-info is-small" @click="iniciaGestaoUsuarios" :class="processandoAcaoUsuarios ? 'is-loading' : ''">
-                    Continuar
-                  </button>
-                </p>
-              </div>
-              
-            </div>
+            </form>
 
             <div v-if="gerenciandoUsuariosLogged">
 
               <div class="field">
                 <p class="control">
-                  <a class="button is-info is-small" @click="novoUsuarioDialog = true">
+                  <a class="button is-info is-small" @click="instrumentState.modals.novoUsuarioDialog = true">
                     <span class="icon is-medium is-left">
                       <i class="fas fa-plus"></i>
                     </span>
@@ -1115,10 +1299,10 @@
           </div>
 
         </div>
-        <button class="modal-close is-large" aria-label="close" @click="gerenciandoUsuarios = false"></button>
+        <button class="modal-close is-large" aria-label="close" @click="instrumentState.modals.gerenciandoUsuarios = false"></button>
       </div>
 
-      <div class="modal modal-fx-fadeInScale" v-bind:class="confirmarRemoverUsuario ? 'is-active' : ''">
+      <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.confirmarRemoverUsuario ? 'is-active' : ''">
         <div class="modal-background"></div>
         <div class="modal-content">
           <div class="box">
@@ -1145,7 +1329,7 @@
         </div>
       </div>
 
-      <div class="modal modal-fx-fadeInScale" v-bind:class="novoUsuarioDialog ? 'is-active' : ''">
+      <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.novoUsuarioDialog ? 'is-active' : ''">
         <div class="modal-background"></div>
         <div class="modal-content">
           <div class="box">
@@ -1163,7 +1347,7 @@
 
             <div class="field is-grouped">
               <p class="control">
-                <a class="button is-small" @click="novoUsuarioDialog = false">
+                <a class="button is-small" @click="instrumentState.modals.novoUsuarioDialog = false">
                   Cancelar
                 </a>
               </p>
@@ -1178,7 +1362,7 @@
         </div>
       </div>
 
-      <div class="modal modal-fx-fadeInScale" v-if="instrumentState.data.inst" v-bind:class="configDialog ? 'is-active' : ''">
+      <div class="modal modal-fx-fadeInScale" v-if="instrumentState.data.inst" v-bind:class="instrumentState.modals.configDialog ? 'is-active' : ''">
         <div class="modal-background"></div>
         <div class="modal-content">
           <div class="box">
@@ -1222,7 +1406,7 @@
 
 
             <div class="">
-              <a class="button is-light" @click="periodicidade.val = instrumentState.configPeriodicidade.periodicidade.val;configDialog = false">
+              <a class="button is-light" @click="periodicidade.val = instrumentState.configPeriodicidade.periodicidade.val;instrumentState.modals.configDialog = false">
                 Cancelar
               </a>
               <a class="button is-link" @click="handleConfirmConfig">
@@ -1232,8 +1416,207 @@
 
           </div>
         </div>
-        <button class="modal-close is-large" aria-label="close" @click="periodicidade.val = instrumentState.configPeriodicidade.periodicidade.val;configDialog = false"></button>
+        <button class="modal-close is-large" aria-label="close" @click="periodicidade.val = instrumentState.configPeriodicidade.periodicidade.val;instrumentState.modals.configDialog = false"></button>
       </div>
+
+
+      <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.helpFaixa ? 'is-active' : ''">
+        <div class="modal-background"></div>
+        <div class="modal-content" style="width: 80%;">
+          <div class="box">
+
+            <article class="media">
+              
+              <div class="media-content">
+
+                <h6 class="title is-6">Faixa</h6>
+
+                  <div class="help-modal-content"><span><p>
+                  Este gráfico exibe os erros de calibração com suas respectivas barras de incerteza, em função dos pontos calibrados, do certificado de calibração e das regras de decisão correspondentes à data selecionada na opção <strong>Análise até</strong>, para
+                  a faixa selecionada.
+                  </p> <p>
+                  Através da opção <strong>Resposta em frequência</strong>, os dados podem ser visualizados em função da frequência, quando possível.
+                  </p> <p>
+                  Neste gráfico são visualizadas correções, quando aplicadas através do módulo <strong>Regras de Decisão</strong>.
+                  </p></span></div>
+
+
+              </div>
+            </article>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="instrumentState.modals.helpFaixa = false"></button>
+      </div>
+
+      <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.helpTendencia ? 'is-active' : ''">
+        <div class="modal-background"></div>
+        <div class="modal-content" style="width: 80%;">
+          <div class="box">
+
+            <article class="media">
+              
+              <div class="media-content">
+
+                <h6 class="title is-6">Tendência</h6>
+
+                <div class="help-modal-content"><span><p>
+                Este gráfico exibe os erros de calibração em função das datas de calibrações, para o ponto selecionado. A seleção do ponto é feita através do menu de seleção do ponto localizado logo acima do gráfico. <em>Neste gráfico não são visualizadas correções</em>,
+                quando aplicadas através do módulo <strong>Regras de Decisão</strong>.
+                </p></span></div>
+
+              </div>
+            </article>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="instrumentState.modals.helpTendencia = false"></button>
+      </div>
+
+      <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.helpRegra ? 'is-active' : ''">
+        <div class="modal-background"></div>
+        <div class="modal-content" style="width: 80%;">
+          <div class="box">
+
+            <article class="media">
+              
+              <div class="media-content">
+
+                <h6 class="title is-6">Regras de Decisão</h6>
+
+                  <div class="help-modal-content">
+                    <p>Este módulo permite a aplicação de correções e análises aos resultados de uma calibração, através da definição dos seguintes parâmetros:
+                    </p> 
+                    <p>
+                      <strong>Cálculo:
+                      </strong> são disponibilizadas algumas opções de como combinar os valores resultantes de uma ou mais calibrações. 
+                    </p> 
+                    <ul>
+                      <li>As opções se enquadram em duas categorias: 
+                        <strong>Nova Exatidão
+                        </strong> ou 
+                        <strong>Critério de Aceitação
+                        </strong>. 
+                      </li> 
+                      <li>Na categoria 
+                        <strong>Nova exatidão
+                        </strong> a opção selecionada em 
+                        <strong>Cálculo
+                        </strong> resulta em uma nova exatidão para o instrumento. Para isso, a combinação dos valores definida em 
+                        <strong>Cálculo
+                        </strong> é multiplicada pelo parâmetro 
+                        <strong>Fator
+                        </strong>, e o resultado é então uma Nova exatidão do instrumento, disponibilizada no módulo 
+                        <strong>Fórmulas e Aplicação
+                        </strong>. 
+                      </li> 
+                      <li>Na categoria 
+                        <strong> Critério de Aceitação
+                        </strong> os cálculos resultam em CONFORME ou NÃO-CONFORME, em comparação aos 
+                        <strong>Limites
+                        </strong> determinados. Para isso, a opção definida em 
+                        <strong>Cálculo
+                        </strong> é multiplicada pelo parâmetro 
+                        <strong>Fator
+                        </strong> e o resultado é então comparado à opção selecionada no parâmetro 
+                        <strong>Limites
+                        </strong>. Os resultados de conformidade são disponibilizados no módulo
+                        <strong> Dados e Resultados
+                        </strong>.
+                      </li>
+                    </ul> 
+                    <p>
+                      <strong>Corrigir
+                      </strong>: é efetuada uma correção (Erro = 0) aos dados da calibração. As equações resultantes dessa correção são disponibilizadas no módulo 
+                      <strong>Fórmulas e Aplicação
+                      </strong>. A interpolação entre os pontos calibrados é feita linearmente. 
+                    </p> 
+                    <p>
+                      <strong>Fator
+                      </strong>: é selecionado um número inteiro que multiplicará o valor resultante do parâmetro 
+                      <strong>Cálculo
+                      </strong>. 
+                    </p> 
+                    <p>
+                      <strong>Limites
+                      </strong>: é selecionado o limite que será exibido no gráfico da faixa, que será o mesmo utilizado na comparação para as opções em 
+                      <strong>Critério de Aceitação
+                      </strong> do parâmetro 
+                      <strong>Cálculo
+                      </strong>. As opções para
+                      <strong> Limites
+                      </strong> são: 
+                    </p> 
+                    <ul>
+                      <li>
+                        <strong>EMA
+                        </strong>: Erro Máximo Admissível especificado pelo fabricante.
+                      </li> 
+                      <li>
+                        <strong>Tolerância
+                        </strong>: valor definido pelo usuário.
+                      </li>
+                    </ul> 
+                    <p>As configurações deste módulo podem ser gravadas para posterior consulta através do botão 
+                      <strong>Gravar configurações
+                      </strong>. Ao selecionar a opção 
+                      <strong>Aplicar à todas as faixas
+                      </strong>, as configurações serão automaticamente estendidas e gravadas para todas as faixas do instrumento. Todas as alterações de parâmetros são registradas e podem ser consultadas no menu principal estendido, na opção 
+                      <strong>Ocorrências
+                      </strong>.
+                    </p>
+
+                  </div>
+
+
+              </div>
+            </article>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="instrumentState.modals.helpRegra = false"></button>
+      </div>
+
+      <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.helpFormulas ? 'is-active' : ''">
+        <div class="modal-background"></div>
+        <div class="modal-content" style="width: 80%;">
+          <div class="box">
+
+            <article class="media">
+              
+              <div class="media-content">
+
+                <h6 class="title is-6">Fórmulas e Aplicação</h6>
+
+                  <div class="help-modal-content"><span><p>Este módulo permite obter o valor correspondente à leitura do instrumento já com as configurações selecionadas no módulo <strong>Regras de Decisão</strong>. Para isso, basta digitar um valor no campo Indicação do instrumento, e a leitura com a análise e correção (quando habilitada) será mostrada logo abaixo.</p> <p>As equações resultantes das análises utilizadas, são disponibilizadas para o usuário. Essas equações estão formatadas para planilhas Excel, com possibilidade de seleção de célula de origem.</p></span></div>                
+
+              </div>
+            </article>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="instrumentState.modals.helpFormulas = false"></button>
+      </div>
+
+      <div class="modal modal-fx-fadeInScale" v-bind:class="instrumentState.modals.helpDados ? 'is-active' : ''">
+        <div class="modal-background"></div>
+        <div class="modal-content" style="width: 80%;">
+          <div class="box">
+
+            <article class="media">
+              
+              <div class="media-content">
+
+                <h6 class="title is-6">Dados e Resultados</h6>
+
+                <div class="help-modal-content">
+                <p>
+        Este módulo apresenta os resultados mais relevantes ao usuário, para cada ponto calibrado. Também são mostrados os resultados de conformidade, caso a opção <strong>Cálculo</strong> selecionada no módulo <strong>Regras de Decisão</strong> se enquadre na categoria <strong>Análise de Conformidade. </strong>  Através do botão <strong>Dados e Resultados, </strong> é possível fazer o download desses dados, em formato <strong>.xlsx</strong>. Nessa tabela já estão incorporadas as equações de correções (quando aplicadas) que também são disponibilizadas no módulo <strong>Fórmulas e Aplicação</strong>.
+      </p></div>
+
+              </div>
+            </article>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="instrumentState.modals.helpDados = false"></button>
+      </div>
+
 
 
     </nav>
@@ -1242,139 +1625,190 @@
   <div id="__template_Landing" class="__router_template __template_Landing">
     <div>
 
-<div class="landing-el content-wrapper">
+      <div class="landing-el content-wrapper">
 
-    <section class="landing-el hero is-landing is-large">
+          <section class="landing-el hero is-landing is-large">
 
 
-        <div class="landing-el hero-body">
-            <div class="landing-el container has-text-centered">
+              <div class="landing-el hero-body">
+                  <div class="landing-el container has-text-centered">
 
-                <div class="landing-el columns">
-                    <div class="landing-el column is-6 is-offset-3">
-                        
-                        <h1 class="landing-el has-text-dark title is-1">
-                            Plataforma ProCal
-                        </h1>
+                      <div class="landing-el columns">
+                          <div class="landing-el column is-6 is-offset-3">
+                              
+                              <h1 class="landing-el has-text-dark title is-1">
+                                  Plataforma ProCal
+                              </h1>
 
-                        <h2 class="landing-el subtitle is-4">
-                            <span class="landing-el has-text-dark">A análise de dados e a gestão da calibração dos seus instrumentos</span> <span class="landing-el has-text-link"> na palma da sua mão.</span>
-                        </h2>
+                              <h2 class="landing-el subtitle has-text-grey is-4">
+                                  <span class="landing-el has-text-dark">A análise de dados e a gestão da calibração dos seus instrumentos</span> <span class="landing-el has-text-link"> na palma da mão.</span>
+                              </h2>
 
-                        <figure class="landing-el image">
-                            <img src="https://arturaugusto.github.io/master/static/img/phone.6a51df6c66cea3e1e515141c0ac272d0.png" alt="" width="768"/>
+                              <figure class="landing-el">
+                                  <img src="https://arturaugusto.github.io/master/static/img/phone.1d344979a449f9fd561b27d22376876c.png" alt="" style="-webkit-mask-image: -webkit-gradient( linear, left top, left bottom, color-stop(0.00, rgba(0,0,0,1)), color-stop(0.35, rgba(0,0,0,1)), color-stop(0.50, rgba(0,0,0,0)), color-stop(0.4, rgba(0,0,0,0)));"/>
+                              </figure>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <section class="landing-el bg-light">
+
+
+              <div class="landing-el container section">
+                <div class="landing-el content has-text-centered">
+                    <p class="landing-el title is-3 subtitle">A plataforma IPT ProCal promove a transformação digital na entrega dos dados de calibração.</p>
+                </div>
+
+              </div>
+          </section>
+
+          <section class="bg-white">
+              <div class="container section">
+                  <div class="columns is-vcentered">
+                    <div class="column ">
+                      <div class="content">
+                        <p class="landing-el title is-3">Análise expandida</p>
+                        <p class="landing-el subtitle has-text-grey is-size-4">Veja a análise dos dados de calibração em forma de gráficos de curva e tendência. Faça mudanças de parâmetros diretamente na plataforma.</p>
+                        <p class="landing-el subtitle has-text-grey is-size-4">Acesse o histórico de calibração dos seus instrumentos.</p>
+                      </div>
+                    </div>
+                    <div class="column">
+                        <figure class="">
+                            <img class="" src="https://arturaugusto.github.io/master/static/img/thumb_tablet_full.3a0690753c08ca9bab22e46de657a1ee.png" alt="" style=""/>
                         </figure>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                  </div>
+              </div>
+          </section>
 
 
-    <section class="landing-el bg-light">
-        <div class="landing-el container section">
-          <div class="landing-el content has-text-centered">
-              <h1>Funcionalidades</h1>
-              <p class="landing-el title is-5">A plataforma IPT ProCal promove a transformação digital na entrega dos dados de calibração, para que nossos clientes tenham <strong>agilidade, flexibilidade</strong> e <strong> inteligentia</strong></p>
-          </div>
-
-
-          <div class="landing-el tile is-ancestor">
-            <div class="landing-el tile is-parent">
-              <article class="landing-el tile is-child media">
-                <p class="landing-el title is-5">Análise expandida</p>
-                <p class="landing-el subtitle">Acesse o histórico de calibração dos sus instrumentos.</p>
-              </article>
-            </div>
-            <div class="landing-el tile is-parent">
-              <article class="landing-el tile is-child media">
-                <p class="landing-el title is-5">Diversidade de formatos</p>
-                <p class="landing-el subtitle">A plataforma pode ser acessada via mobile, desktop, ou pelo QR code fixado no seu instrumento.</p>
-              </article>
-            </div>
-            <div class="landing-el tile is-parent">
-              <article class="landing-el tile is-child media">
-                <p class="landing-el title is-5">Visualização de certificados</p>
-                <p class="landing-el subtitle">Visualize os certificados de calibração dos seus instrumentos, atuais e anteriores.</p>
-              </article>
-            </div>
-            <div class="landing-el tile is-parent">
-              <article class="landing-el tile is-child media">
-                <p class="landing-el title is-5">Histórico de ocorrências</p>
-                <p class="landing-el subtitle">Acesse o registro de mudanças feitas pelos usuários da plataforma.</p>
-              </article>
-            </div>
-          </div>
-
-
-        </div>
-    </section>
-
-    <section class="bg-white">
-        <div class="container section">
-            <div class="columns is-vcentered">
-                <div class="column">
-                    <figure class="image">
-                        <img src="https://arturaugusto.github.io/master/static/img/phone.6a51df6c66cea3e1e515141c0ac272d0.png" alt=""/>
-                    </figure>
-                </div>
-                <div class="column ">
+          <section class="bg-white">
+              <div class="container section">
+                  <div class="columns is-vcentered">
+                      <div class="column ">
                         <div class="content">
-                            <h1>Descubra mais sobre a plataforma</h1>
-                            <p>Entre em contato para saber como começar a usar.</p>
-
-                            <a href="" class="button is-danger">Discover</a>
+                          <p class="landing-el title is-3">Visualização de certificados</p>
+                          <p class="landing-el subtitle has-text-grey is-size-4">Visualize os certificados de calibração dos seus instrumentos em formato PDF, atuais e anteriores.
                         </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--<section class="bg-light">
-        <div class="container section">
-            <div class="content has-text-centered">
-                <h1>Perguntas frequêntes</h1>
-            </div>
-
-            <div class="columns">
-                <div class="column is-half">
-                    <div class="title is-4">Can I try before I buy?</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante.</p>
-                </div>
-
-                <div class="column is-half">
-                    <div class="title is-4">Can I try before I buy?</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante.</p>
-                </div>
-            </div>
-
-            <div class="columns">
-                <div class="column is-half">
-                    <div class="title is-4">Can I try before I buy?</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante.</p>
-                </div>
-
-                <div class="column is-half">
-                    <div class="title is-4">Can I try before I buy?</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>-->
+                      </div>
+                      <div class="column">
+                          <figure class="">
+                              <img class="" src="https://arturaugusto.github.io/master/static/img/thumb_certificado_full.efb434bfb37f19aba64b7e3ca9499ca6.png" alt="" style=""/>
+                          </figure>
+                      </div>
+                  </div>
+              </div>
+          </section>
 
 
-    <footer class="footer bg-light">
-        <div class="container">
-            <div class="content has-text-centered">
-                <p>
-                    IPT - Instituto de Pesquisas Tecnológicas do Estado de São Paulo - 2019
-                </p>
-            </div>
-        </div>
-    </footer>
-</div>
+          <section class="bg-white">
+              <div class="container section">
+                  <div class="columns is-vcentered">
+                    <div class="column ">
+                      <div class="content">
+                        <p class="landing-el title is-3">Histórico de ocorrências</p>
+                        <p class="landing-el subtitle has-text-grey is-size-4">Acesse o registro de mudanças feitas pelos usuários da plataforma.</p>
+                      </div>
+
+                    </div>
+                    <div class="column">
+                        <figure class="">
+                            <img class="" src="https://arturaugusto.github.io/master/static/img/thumb_ocorrencias_full.cba51fb14f15dbda6679755e62c76154.png" alt="" style=""/>
+                        </figure>
+                    </div>
+                  </div>
+              </div>
+          </section>
+
+
+          <section class="bg-white">
+              <div class="container section">
+                  <div class="columns is-vcentered">
+                    <div class="column ">
+                      <div class="content">
+                        <p class="landing-el title is-3">Orçamento em poucos cliques</p>
+                        <p class="landing-el subtitle has-text-grey is-size-4">A plataforma exibe a situação do instrumento usando esquemas de cores. Peça orçamentos facilmente.</p>
+                      </div>
+                    </div>
+                    <div class="column">
+                        <figure class="">
+                            <img class="" src="https://arturaugusto.github.io/master/static/img/thumb_orcamento_full.ffacb39190177a3d86ade27e8e0e1549.png" alt="" style=""/>
+                        </figure>
+                    </div>
+                  </div>
+              </div>
+          </section>
+
+          <section class="landing-el bg-light">
+              <div class="container section">
+                  <div class="columns is-vcentered">
+                    <div class="column">
+                        <figure class="">
+                            <img src="https://arturaugusto.github.io/master/static/img/phone.1d344979a449f9fd561b27d22376876c.png" alt="" style=""/>
+                        </figure>
+                    </div>
+                    <div class="column ">
+                            <div class="content">
+                                <p class="landing-el title is-3">Descubra mais sobre a plataforma</p>
+                                <p class="landing-el subtitle has-text-grey is-size-4">Para saber mais sobre a plataforma e como começar a usar, entre em contato pelo e-mail: <strong>lme@ipt.br</strong>.</p>
+
+                                
+                            </div>
+
+                    </div>
+                  </div>
+              </div>
+          </section>
+
+          <!--
+          <section class="bg-white">
+              <div class="container section">
+                  <div class="content has-text-centered">
+                      <h1>Perguntas frequêntes</h1>
+                  </div>
+
+                  <div class="columns">
+                      <div class="column is-half">
+                          <div class="title is-4">Qual o custo para usar a plataforma?</div>
+                          <p>....</p>
+                      </div>
+
+                      <div class="column is-half">
+                          <div class="title is-4">Posso inserir os dos meus instrumentos?</div>
+                          <p>...</p>
+                      </div>
+                  </div>
+
+                  <div class="columns">
+                      <div class="column is-half">
+                          <div class="title is-4">Can I try before I buy?</div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante.</p>
+                      </div>
+
+                      <div class="column is-half">
+                          <div class="title is-4">Can I try before I buy?</div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante.</p>
+                      </div>
+                  </div>
+
+              </div>
+          </section>
+          -->
+
+
+          <footer class="footer bg-white">
+              <div class="container">
+                  <div class="content has-text-centered">
+                      <p>
+                          IPT - Instituto de Pesquisas Tecnológicas do Estado de São Paulo - 2019
+                      </p>
+                  </div>
+              </div>
+          </footer>
+      </div>
       
     </div>
   </div>
@@ -1386,7 +1820,7 @@
   <div id="app">
     <app-nav v-if="instrumentState.db || instrumentState.isLanding"></app-nav>
 
-    <landing v-if="instrumentState.isLanding"></landing>
+    <landing v-if="!loading && !instrumentState.db && instrumentState.isLanding"></landing>
     <div class="container">
       <login v-if="!loading && !instrumentState.db && !instrumentState.isLanding" v-on:check_login="checkLogin"></login>
       <router-view v-if="instrumentState.db"></router-view>
@@ -1394,7 +1828,8 @@
   </div>
   <div id="pdf-container"></div>
 
-  <script type="text/javascript" src="https://arturaugusto.github.io/master/static/js/app.ea06c2e05d90f7ec6f20d5d5e22ae234.js"></script>
+  
+  <script type="text/javascript" src="https://arturaugusto.github.io/master/static/js/app.b10f45e85ac04367e43d3ff8e73502c5.js"></script>
   <script type=text/javascript>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js')

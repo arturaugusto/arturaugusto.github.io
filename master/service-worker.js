@@ -13,24 +13,40 @@ var precacheConfig = [
     "81ede6a4a184b81dbcc2c09630b00d7e"
   ],
   [
-    "https://arturaugusto.github.io/master/static/img/phone.6a51df6c66cea3e1e515141c0ac272d0.png",
-    "6a51df6c66cea3e1e515141c0ac272d0"
+    "https://arturaugusto.github.io/master/static/img/phone.1d344979a449f9fd561b27d22376876c.png",
+    "1d344979a449f9fd561b27d22376876c"
   ],
   [
-    "https://arturaugusto.github.io/master/static/img/phone.6a51df6c66cea3e1e515141c0ac272d0.png",
-    "6a51df6c66cea3e1e515141c0ac272d0"
+    "https://arturaugusto.github.io/master/static/img/thumb_tablet_full.3a0690753c08ca9bab22e46de657a1ee.png",
+    "3a0690753c08ca9bab22e46de657a1ee"
   ],
   [
-    "https://arturaugusto.github.io/master/static/js/app.ea06c2e05d90f7ec6f20d5d5e22ae234.js",
-    "ea06c2e05d90f7ec6f20d5d5e22ae234"
+    "https://arturaugusto.github.io/master/static/img/thumb_certificado_full.efb434bfb37f19aba64b7e3ca9499ca6.png",
+    "efb434bfb37f19aba64b7e3ca9499ca6"
+  ],
+  [
+    "https://arturaugusto.github.io/master/static/img/thumb_ocorrencias_full.cba51fb14f15dbda6679755e62c76154.png",
+    "cba51fb14f15dbda6679755e62c76154"
+  ],
+  [
+    "https://arturaugusto.github.io/master/static/img/thumb_orcamento_full.ffacb39190177a3d86ade27e8e0e1549.png",
+    "ffacb39190177a3d86ade27e8e0e1549"
+  ],
+  [
+    "https://arturaugusto.github.io/master/static/img/phone.1d344979a449f9fd561b27d22376876c.png",
+    "1d344979a449f9fd561b27d22376876c"
+  ],
+  [
+    "https://arturaugusto.github.io/master/static/js/app.b10f45e85ac04367e43d3ff8e73502c5.js",
+    "b10f45e85ac04367e43d3ff8e73502c5"
   ],
   [
     "https://arturaugusto.github.io/master/static/js/vendor.4bcd1648adafcbc3acf3cb3f7162ba98.js",
     "4bcd1648adafcbc3acf3cb3f7162ba98"
   ],
   [
-    "https://arturaugusto.github.io/master/static/css/app.fd8d0ef65eeeec17008a330835d3efa1.css",
-    "fd8d0ef65eeeec17008a330835d3efa1"
+    "https://arturaugusto.github.io/master/static/css/app.5fb8bde38c49e29ee51892bef5106445.css",
+    "5fb8bde38c49e29ee51892bef5106445"
   ],
   [
     "https://arturaugusto.github.io/master/static/icons/icon_512x512.3c5483b4bcb425460fcaf7a7947238fb.png",
@@ -62,7 +78,7 @@ var precacheConfig = [
   ],
   [
     "https://arturaugusto.github.io/master/index.html",
-    "d11746dfb0574a2c4ceceeaa9520d68c"
+    "12a079fffcb170af37bbb1c27cdda3cb"
   ]
 ],
   cacheName = "sw-precache-v3-ipt-procal-" + (self.registration ? self.registration.scope : ""),
@@ -156,7 +172,7 @@ self.addEventListener("install", function(e) {
   if ("GET" === e.request.method) {
     var t, a = stripIgnoredUrlParameters(e.request.url, ignoreUrlParametersMatching);
     (t = urlsToCacheKeys.has(a)) || (a = addDirectoryIndex(a, "index.html"), t = urlsToCacheKeys.has(a));
-    !t && "navigate" === e.request.mode && isPathWhitelisted([], e.request.url) && (a = new URL("https://https://arturaugusto.github.io/master/index.html", self.location).toString(), t = urlsToCacheKeys.has(a)), t && e.respondWith(caches.open(cacheName).then(function(e) {
+    !t && "navigate" === e.request.mode && isPathWhitelisted([], e.request.url) && (a = new URL("https://arturaugusto.github.io/master/index.html", self.location).toString(), t = urlsToCacheKeys.has(a)), t && e.respondWith(caches.open(cacheName).then(function(e) {
       return e.match(urlsToCacheKeys.get(a)).then(function(e) {
         if (e) return e;
         throw Error("The cached response that was expected is missing.")
