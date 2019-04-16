@@ -17,36 +17,44 @@ var precacheConfig = [
     "1d344979a449f9fd561b27d22376876c"
   ],
   [
+    "https://arturaugusto.github.io/master/static/img/section_wave.01c6ae1ca21d669e88d0934d72a63ff3.png",
+    "01c6ae1ca21d669e88d0934d72a63ff3"
+  ],
+  [
     "https://arturaugusto.github.io/master/static/img/thumb_tablet_full.3a0690753c08ca9bab22e46de657a1ee.png",
     "3a0690753c08ca9bab22e46de657a1ee"
   ],
   [
-    "https://arturaugusto.github.io/master/static/img/thumb_certificado_full.efb434bfb37f19aba64b7e3ca9499ca6.png",
-    "efb434bfb37f19aba64b7e3ca9499ca6"
+    "https://arturaugusto.github.io/master/static/img/thumb_certificado_full.8665e56f7947f696dcb39780614d3ec4.png",
+    "8665e56f7947f696dcb39780614d3ec4"
   ],
   [
-    "https://arturaugusto.github.io/master/static/img/thumb_ocorrencias_full.cba51fb14f15dbda6679755e62c76154.png",
-    "cba51fb14f15dbda6679755e62c76154"
+    "https://arturaugusto.github.io/master/static/img/thumb_ocorrencias_full.29015fac520f0230303c209756826573.png",
+    "29015fac520f0230303c209756826573"
   ],
   [
     "https://arturaugusto.github.io/master/static/img/thumb_orcamento_full.ffacb39190177a3d86ade27e8e0e1549.png",
     "ffacb39190177a3d86ade27e8e0e1549"
   ],
   [
+    "https://arturaugusto.github.io/master/static/img/section_wave.01c6ae1ca21d669e88d0934d72a63ff3.png",
+    "01c6ae1ca21d669e88d0934d72a63ff3"
+  ],
+  [
     "https://arturaugusto.github.io/master/static/img/phone.1d344979a449f9fd561b27d22376876c.png",
     "1d344979a449f9fd561b27d22376876c"
   ],
   [
-    "https://arturaugusto.github.io/master/static/js/app.b10f45e85ac04367e43d3ff8e73502c5.js",
-    "b10f45e85ac04367e43d3ff8e73502c5"
+    "https://arturaugusto.github.io/master/static/js/app.7c8ca1944cb8c59588eac085ce0dffce.js",
+    "7c8ca1944cb8c59588eac085ce0dffce"
   ],
   [
-    "https://arturaugusto.github.io/master/static/js/vendor.4bcd1648adafcbc3acf3cb3f7162ba98.js",
-    "4bcd1648adafcbc3acf3cb3f7162ba98"
+    "https://arturaugusto.github.io/master/static/js/vendor.1651b447159dbe639871e54b438a223d.js",
+    "1651b447159dbe639871e54b438a223d"
   ],
   [
-    "https://arturaugusto.github.io/master/static/css/app.5fb8bde38c49e29ee51892bef5106445.css",
-    "5fb8bde38c49e29ee51892bef5106445"
+    "https://arturaugusto.github.io/master/static/css/app.a10857a89dc497fb66e8984e68a8ed2b.css",
+    "a10857a89dc497fb66e8984e68a8ed2b"
   ],
   [
     "https://arturaugusto.github.io/master/static/icons/icon_512x512.3c5483b4bcb425460fcaf7a7947238fb.png",
@@ -78,7 +86,7 @@ var precacheConfig = [
   ],
   [
     "https://arturaugusto.github.io/master/index.html",
-    "12a079fffcb170af37bbb1c27cdda3cb"
+    "98ff06c1638b4b2fa2b96a6af45a0c89"
   ]
 ],
   cacheName = "sw-precache-v3-ipt-procal-" + (self.registration ? self.registration.scope : ""),

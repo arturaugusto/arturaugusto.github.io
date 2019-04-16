@@ -12,12 +12,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name=theme-color content=#324157>
   <link rel=manifest href=https://arturaugusto.github.io/master/manifest.c4e5dc75453f40d989933044522f1ab2.json>
-  <script type="text/javascript" src="https://arturaugusto.github.io/master/static/js/vendor.4bcd1648adafcbc3acf3cb3f7162ba98.js"></script>
+  <script type="text/javascript" src="https://arturaugusto.github.io/master/static/js/vendor.1651b447159dbe639871e54b438a223d.js"></script>
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 
-  <link href="https://arturaugusto.github.io/master/static/css/app.5fb8bde38c49e29ee51892bef5106445.css" rel="stylesheet" type="text/css">
+  <link href="https://arturaugusto.github.io/master/static/css/app.a10857a89dc497fb66e8984e68a8ed2b.css" rel="stylesheet" type="text/css">
 
 
 
@@ -117,7 +117,7 @@
                   -->
                   <button @click="submitDefinir" class="button is-block is-info is-fullwidth" :disabled="!definirValid">Definir Senha</button>
                   <p class="has-text-grey" style="padding-top: 12px;">
-                    <span><a @click="action='login'">Login</a></span>
+                    <span><a @click="redirectLogin">Login</a></span> &#8226;
                     <span><a @click="action='recuperar'">Recuperar Senha</a> &nbsp;</span>
                     <br>
                     <a @click="instrumentState.modals.termosDeUso = true">Termos de Uso</a> &nbsp;
@@ -966,6 +966,30 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
           LISTA DE INSTRUMENTOS
         </div>
 
+
+
+        <a 
+          class="navbar-item"
+          style="" 
+          @click="instrumentState.landingScroll = 'landingOQueE'"
+          v-if="instrumentState.isLanding">
+          O que é
+        </a>
+        <a 
+          class="navbar-item"
+          style="" 
+          @click="instrumentState.landingScroll = 'landingFuncionalidades'"
+          v-if="instrumentState.isLanding">
+          Diferenciais
+        </a>
+        <a 
+          class="navbar-item"
+          style="" 
+          @click="instrumentState.landingScroll = 'landingSaibaMais'"
+          v-if="instrumentState.isLanding">
+          Contato
+        </a>
+
         <a v-if="!instrumentState.isLanding" role="button" class="navbar-burger burger" v-bind:class="burgerActive ? 'is-active': ''" @click="burgerActive = !burgerActive" aria-label="menu" aria-expanded="false" data-target="navbar">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -977,6 +1001,7 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
 
       <div id="navbar" class="navbar-menu" v-bind:class="burgerActive || instrumentState.isLanding ? 'is-active': ''">
         <div class="navbar-end" @click="burgerActive = false" style="font-size: 0.9em">
+  
 
           <div class="navbar-item" v-if="instrumentState.isLanding">
             <div class="navbar-item">
@@ -1636,7 +1661,7 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
                       <div class="landing-el columns">
                           <div class="landing-el column is-6 is-offset-3">
                               
-                              <h1 class="landing-el has-text-dark title is-1">
+                              <h1 ref="landingOQueE" class="landing-el has-text-dark title is-1">
                                   Plataforma ProCal
                               </h1>
 
@@ -1663,9 +1688,9 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
 
               </div>
           </section>
-
+          <img class="" src="https://arturaugusto.github.io/master/static/img/section_wave.01c6ae1ca21d669e88d0934d72a63ff3.png" alt="" style="width: 100%;height: 40px;"/>
           <section class="bg-white">
-              <div class="container section">
+              <div ref="landingFuncionalidades" class="container section">
                   <div class="columns is-vcentered">
                     <div class="column ">
                       <div class="content">
@@ -1696,7 +1721,7 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
                       </div>
                       <div class="column">
                           <figure class="">
-                              <img class="" src="https://arturaugusto.github.io/master/static/img/thumb_certificado_full.efb434bfb37f19aba64b7e3ca9499ca6.png" alt="" style=""/>
+                              <img class="" src="https://arturaugusto.github.io/master/static/img/thumb_certificado_full.8665e56f7947f696dcb39780614d3ec4.png" alt="" style="-webkit-mask-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(0, 0, 0)), color-stop(0.9, rgb(0, 0, 0)), color-stop(0.95, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0)));}"/>
                           </figure>
                       </div>
                   </div>
@@ -1716,7 +1741,7 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
                     </div>
                     <div class="column">
                         <figure class="">
-                            <img class="" src="https://arturaugusto.github.io/master/static/img/thumb_ocorrencias_full.cba51fb14f15dbda6679755e62c76154.png" alt="" style=""/>
+                            <img class="" src="https://arturaugusto.github.io/master/static/img/thumb_ocorrencias_full.29015fac520f0230303c209756826573.png" alt="" style=""/>
                         </figure>
                     </div>
                   </div>
@@ -1727,13 +1752,15 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
           <section class="bg-white">
               <div class="container section">
                   <div class="columns is-vcentered">
-                    <div class="column ">
+                    <div class="column is-6">
                       <div class="content">
                         <p class="landing-el title is-3">Orçamento em poucos cliques</p>
                         <p class="landing-el subtitle has-text-grey is-size-4">A plataforma exibe a situação do instrumento usando esquemas de cores. Peça orçamentos facilmente.</p>
                       </div>
                     </div>
-                    <div class="column">
+                    <div class="column is-2">
+                    </div>
+                    <div class="column is-4">
                         <figure class="">
                             <img class="" src="https://arturaugusto.github.io/master/static/img/thumb_orcamento_full.ffacb39190177a3d86ade27e8e0e1549.png" alt="" style=""/>
                         </figure>
@@ -1743,7 +1770,8 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
           </section>
 
           <section class="landing-el bg-light">
-              <div class="container section">
+          <img class="rotate-180" src="https://arturaugusto.github.io/master/static/img/section_wave.01c6ae1ca21d669e88d0934d72a63ff3.png" alt="" style="width: 100%;height: 40px;"/>
+              <div ref="landingSaibaMais" class="container section">
                   <div class="columns is-vcentered">
                     <div class="column">
                         <figure class="">
@@ -1801,11 +1829,11 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
 
           <footer class="footer bg-white">
               <div class="container">
-                  <div class="content has-text-centered">
-                      <p>
-                          IPT - Instituto de Pesquisas Tecnológicas do Estado de São Paulo - 2019
-                      </p>
-                  </div>
+                <div class="content has-text-centered">
+                    <p>
+                        IPT - Instituto de Pesquisas Tecnológicas do Estado de São Paulo - 2019
+                    </p>
+                </div>
               </div>
           </footer>
       </div>
@@ -1829,7 +1857,7 @@ vigor enquanto o CLIENTE tiver acesso a PLATAFORMA.</p> <p class="MsoNormal">&nb
   <div id="pdf-container"></div>
 
   
-  <script type="text/javascript" src="https://arturaugusto.github.io/master/static/js/app.b10f45e85ac04367e43d3ff8e73502c5.js"></script>
+  <script type="text/javascript" src="https://arturaugusto.github.io/master/static/js/app.7c8ca1944cb8c59588eac085ce0dffce.js"></script>
   <script type=text/javascript>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js')
